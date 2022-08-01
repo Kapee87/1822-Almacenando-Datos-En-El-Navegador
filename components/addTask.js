@@ -11,11 +11,11 @@ export const addTask = (e) => {
   
   const value = input.value;
   const date = calendar.value;
-  const dateFormat = moment(date).format("DD/MM/YYYY")
+  const dateFormat = moment(date).format('DD/MM/YYYY');
 
-    if (value === '' || date === ''){
-      return
-    };
+    if (value === '' || date === '') {
+      return;
+    }
   
   input.value = '';
   calendar.value = '';
@@ -27,9 +27,9 @@ export const addTask = (e) => {
     dateFormat,
     complete,
     id: uuid.v4(),
-  }
+  };
 
-  list.innerHTML='';
+  list.innerHTML = '';
 
   const taskList = JSON.parse(localStorage.getItem('tasks')) || [];
   taskList.push(taskObj);
@@ -46,7 +46,7 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
 
   const check = checkComplete(id);
 
-  if (complete){
+  if (complete) {
     check.classList.toggle('fas');
     check.classList.toggle('completeIcon');
     check.classList.toggle('far');
